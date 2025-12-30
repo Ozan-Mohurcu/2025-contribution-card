@@ -1,0 +1,463 @@
+/* ===== CSS Variables & Reset ===== */
+:root {
+    --primary-gradient: linear-gradient(135deg, #0a1628 0%, #1a2f4e 50%, #0f1f35 100%);
+    --accent-blue: #00d4ff;
+    --accent-teal: #00c9a7;
+    --accent-gold: #ffd700;
+    --accent-orange: #fb923c;
+
+    --github-color: #6e5494;
+    --linkedin-color: #0077b5;
+    --kaggle-color: #20beff;
+    --projects-color: #00c9a7;
+    --medium-color: #00ab6c;
+    --huggingface-color: #ffcc00;
+
+    --glass-bg: rgba(255, 255, 255, 0.06);
+    --glass-border: rgba(255, 255, 255, 0.12);
+
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.7);
+    --text-muted: rgba(255, 255, 255, 0.5);
+
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background: var(--primary-gradient);
+    min-height: 100vh;
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+/* Developer Credit */
+.developer-credit {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    z-index: 100;
+}
+
+/* Container */
+.container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-teal), var(--accent-gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+@media (max-width: 1024px) {
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Form Section */
+.form-section {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 25px;
+}
+
+.section-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.card-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.form-group input {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    padding: 10px 12px;
+    color: var(--text-primary);
+    font-family: var(--font-family);
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--accent-blue);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.divider {
+    height: 1px;
+    background: var(--glass-border);
+    margin: 5px 0;
+}
+
+.platform-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.platform-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.platform-header h3 {
+    font-size: 0.95rem;
+}
+
+.platform-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.github-icon {
+    color: #a78bfa;
+}
+
+.linkedin-icon {
+    color: var(--linkedin-color);
+}
+
+.kaggle-icon {
+    color: var(--kaggle-color);
+}
+
+.medium-icon {
+    color: var(--medium-color);
+}
+
+.huggingface-icon {
+    color: var(--huggingface-color);
+}
+
+/* Photo Upload */
+.photo-upload-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.upload-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px dashed var(--glass-border);
+    border-radius: 8px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-family: var(--font-family);
+    font-size: 0.85rem;
+}
+
+.photo-preview {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid var(--accent-gold);
+    display: none;
+    overflow: hidden;
+}
+
+.photo-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.photo-preview.has-image {
+    display: block;
+}
+
+/* Buttons */
+.generate-btn,
+.download-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: var(--font-family);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+.generate-btn {
+    background: linear-gradient(135deg, var(--accent-blue), var(--accent-teal));
+    color: white;
+}
+
+.download-btn {
+    background: linear-gradient(135deg, var(--accent-teal), var(--accent-blue));
+    color: white;
+    width: 100%;
+}
+
+.download-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Preview Section */
+.preview-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+}
+
+/* ========== CONTRIBUTION CARD ========== */
+.contribution-card {
+    width: 480px;
+    background: #0d1b2a;
+    border-radius: 16px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.card-top {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.card-info {
+    flex: 1;
+    text-align: center;
+}
+
+.title-line {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.year-badge {
+    background: linear-gradient(135deg, var(--accent-orange), #f97316);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 12px;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: white;
+}
+
+.user-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 2px;
+}
+
+.job-title {
+    font-size: 0.8rem;
+    color: var(--accent-gold);
+}
+
+.profile-photo {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: #1a3a52;
+    border: 3px solid var(--accent-gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.photo-placeholder {
+    font-size: 2rem;
+    opacity: 0.5;
+}
+
+/* Stats Section */
+.stats-section {
+    background: #0f2435;
+    border-radius: 12px;
+    padding: 12px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.empty-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: var(--text-muted);
+    padding: 15px;
+}
+
+.stat-card {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px;
+    background: #142d42;
+    border-radius: 8px;
+}
+
+.stat-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.stat-icon svg {
+    width: 14px;
+    height: 14px;
+}
+
+.github-card .stat-icon {
+    background: linear-gradient(135deg, #6e5494, #24292e);
+    color: white;
+}
+
+.linkedin-card .stat-icon {
+    background: linear-gradient(135deg, #0077b5, #00a0dc);
+    color: white;
+}
+
+.kaggle-card .stat-icon {
+    background: linear-gradient(135deg, #20beff, #00b4d8);
+    color: white;
+}
+
+.projects-card .stat-icon {
+    background: linear-gradient(135deg, #00c9a7, #00b894);
+    color: white;
+}
+
+.medium-card .stat-icon {
+    background: linear-gradient(135deg, #00ab6c, #00c853);
+    color: white;
+}
+
+.huggingface-card .stat-icon {
+    background: linear-gradient(135deg, #ffcc00, #ffb300);
+    color: #333;
+}
+
+.stat-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-label {
+    font-size: 0.6rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+.stat-value {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: white;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+    .contribution-card {
+        width: 100%;
+        max-width: 480px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
