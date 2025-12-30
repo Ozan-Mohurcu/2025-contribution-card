@@ -15,9 +15,10 @@ Bu proje, 2025 yılı boyunca yazılım ve veri bilimi alanında yapılan katkı
 3. Kendi bilgilerinizi ve katkılarınızı forma girin.
 4. Kartınızı önizleyin ve PNG olarak indirin (`2025_katki_karti_Ad_Soyad.png` şeklinde kaydedilir).
 
+
 ## Örnek Katkı Kartı
 
-![Örnek Kart](./2025_katki_karti_Ozan_M.png)
+(2025_katki_karti_Ozan_M..png)
 
 ## Katkı ve Lisans
 Projeyi dilediğiniz gibi özelleştirebilir, katkılarınızı ekleyebilirsiniz. Geliştirmeler için pull request gönderebilirsiniz.
